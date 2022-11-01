@@ -1,0 +1,11 @@
+.card {
+  background-color: #4997d0;
+  color: white;
+}
+.row-spacing {
+  padding-bottom: 14px;
+}
+.comments-section {
+  padding-left: 3.5%;
+  padding-right: 5%;
+}

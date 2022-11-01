@@ -1,0 +1,11 @@
+<app-spinner [showSpinner]="showLoading"></app-spinner>
+<div class="container comments-section" *ngIf="!showLoading">
+  <div class="row row-spacing" *ngFor="let post of commentsList; let i = index">
+    <div class="card col-sm-10">
+      <div class="card-body">
+        <b> Name: </b> {{ post.name }}<br /><b>Comment: </b>{{ post.body }}
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="error">Please try again after some time</div>

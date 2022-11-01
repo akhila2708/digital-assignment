@@ -1,0 +1,34 @@
+<app-spinner [showSpinner]="showLoading"></app-spinner>
+<div class="container" *ngIf="!showLoading">
+  <div class="row pt-5 pb-5">
+    Posts from
+    {{ selectedUser.name }}:
+  </div>
+  <div *ngFor="let post of postsList; let i = index">
+    <div
+      class="row row-spacing"
+      *ngIf="i < (showAllPosts ? postsList.length : 3)"
+    >
+      <div class="card col-sm-10">
+        <div class="card-body">
+          <p class="title"><b> Title: </b>{{ post.title }}<br /></p>
+          <b> Post: </b>{{ post.body }}
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <button class="button-plus" (click)="loadComments(post)">
+          <img width="50" height="50" src="assets/Images/plus-icon.jpg" />
+        </button>
+      </div>
+    </div>
+    <app-comments
+      [postData]="post"
+      [postSelected]="postSelected"
+      *ngIf="post.showComments"
+    ></app-comments>
+  </div>
+  <div class="loadAllSection" *ngIf="postsList.length > 3 && !showAllPosts">
+    <button class="col loadAllBtn" (click)="loadMore()">... Load all</button>
+  </div>
+</div>
+<div *ngIf="error">Please try again after some time</div>

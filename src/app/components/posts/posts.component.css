@@ -1,0 +1,26 @@
+.row-spacing {
+  padding-bottom: 14px;
+}
+.card {
+  background-color: #4997d0;
+  color: white;
+}
+.button-plus {
+  padding: 0px;
+  margin-top: 23px;
+  border: none;
+}
+.loadAllSection {
+  float: right;
+  margin-right: 16%;
+}
+.loadAllBtn {
+  background-color: #4997d0;
+  color: white;
+  padding-left: 40px;
+  padding-right: 40px;
+  border: none;
+}
+.title {
+  text-align: center;
+}
